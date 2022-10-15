@@ -1,6 +1,5 @@
 package com.fastcampus.projectboard.response;
 
-import com.fastcampus.projectboard.domain.ArticleComment;
 import com.fastcampus.projectboard.dto.ArticleWithCommentsDto;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -12,7 +11,7 @@ import java.util.stream.Collectors;
 
 @Getter
 @RequiredArgsConstructor
-public class ArticleWithCommentResponse {
+public class ArticleWithCommentsResponse {
 
     private final Long id;
     private final String title;
@@ -21,21 +20,21 @@ public class ArticleWithCommentResponse {
     private final LocalDateTime createdAt;
     private final String email;
     private final String NickName;
-    private final Set<ArticleCommentResponse> articleCommentResponse;
+    private final Set<ArticleCommentResponse> articleCommentsResponse;
 
 
-    public static ArticleWithCommentResponse of (Long id, String title, String content, String hashtag, LocalDateTime createdAt, String email, String nickName, Set<ArticleCommentResponse> articleCommentResponse) {
-        return new ArticleWithCommentResponse(id, title,content, hashtag, createdAt, email, nickName, articleCommentResponse);
+    public static ArticleWithCommentsResponse of (Long id, String title, String content, String hashtag, LocalDateTime createdAt, String email, String nickName, Set<ArticleCommentResponse> articleCommentResponse) {
+        return new ArticleWithCommentsResponse(id, title,content, hashtag, createdAt, email, nickName, articleCommentResponse);
     }
 
-    public static ArticleWithCommentResponse from(ArticleWithCommentsDto dto){
+    public static ArticleWithCommentsResponse from(ArticleWithCommentsDto dto){
 
         String nickname = dto.getUserAccountDto().getNickname();
         if (nickname == null || nickname.isBlank()){
             nickname = dto.getUserAccountDto().getUserId();
         }
 
-        return new ArticleWithCommentResponse(
+        return new ArticleWithCommentsResponse(
                 dto.getId(),
                 dto.getTitle(),
                 dto.getContent(),

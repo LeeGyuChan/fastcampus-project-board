@@ -22,7 +22,12 @@ public interface ArticleRepository extends
 
     //Query 메소드의 입력변수로 위와 같이 Pageable 변수를 추가하면 Page타입을 반환형으로 사용할 수 있다.
     //Pageable 객체를 통해 페이징과 정렬을 위한 파라미터를 전달한다.
-    Page<Article> findByTitle(String title, Pageable pageable);
+    Page<Article> findByTitleContaining(String title, Pageable pageable);
+    Page<Article> findByContentContaining(String content, Pageable pageable);
+    Page<Article> findByUserAccount_UserIdContaining(String userId, Pageable pageable);
+    Page<Article> findByUserAccount_NicknameContaining(String nickname, Pageable pageable);
+    Page<Article> findByHashtag(String hashtag, Pageable pageable);
+
 
     @Override
     default void customize(QuerydslBindings bindings, QArticle root){

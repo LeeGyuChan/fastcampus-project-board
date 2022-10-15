@@ -1,7 +1,6 @@
 package com.fastcampus.projectboard.response;
 
 import com.fastcampus.projectboard.dto.ArticleDto;
-import com.fastcampus.projectboard.dto.UserAccountDto;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
@@ -17,7 +16,7 @@ public class ArticleResponse {
     private final String hashtag;
     private final LocalDateTime createdAt;
     private final String email;
-    private final String NickName;
+    private final String nickname;
 
 
     public static ArticleResponse of(Long id, String title, String content, String hashtag, LocalDateTime createdAt, String email, String nickName) {
