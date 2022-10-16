@@ -13,23 +13,23 @@
 
 <header id="header"></header>
 
-<main class="container">
-    <header class="py-5 text-center">
+<main id ="article-main" class="container">
+    <header id="article-header" class="py-5 text-center">
         <h1>첫번째 글</h1>
     </header>
 
     <div class="row g-5">
         <section class="col-md-5 col-lg-4 order-md-last">
             <aside>
-                <p><span class="nick-name">ckeel</span></p>
-                <p><a class="u-url" rel="me" href="mailto:ckeel@naver.com">ckeel@naver.com</a></p>
-                <p><time datetime="2022-01-01T00:00:00">2022-01-01</time></p>
-                <p>#java</p>
+                <p><span id="nickname" class="nick-name">ckeel</span></p>
+                <p><a id="email" class="u-url" rel="me" href="mailto:ckeel@naver.com">ckeel@naver.com</a></p>
+                <p><time id="created-at" datetime="2022-01-01T00:00:00">2022-01-01</time></p>
+                <p><span id="hashtag">#java</span></p>
             </aside>
         </section>
 
-        <article class="col-md-7 col-lg-8">
-            <p>본문<br><br></p>
+        <article id="article-content" class="col-md-7 col-lg-8">
+            <pre>본문<br><br></pre>
         </article>
     </div>
 
@@ -46,17 +46,7 @@
                 </div>
             </form>
 
-            <ul>
-                <li>
-                    <div>
-                        <time><small>2022-01-01</small></time>
-                        <strong>ckeel</strong>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
-                            Lorem ipsum dolor sit amet
-                        </p>
-                    </div>
-                </li>
+            <ul id="article-comment" class="row-cols-7">
                 <li>
                     <div>
                         <time><small>2022-01-01</small></time>

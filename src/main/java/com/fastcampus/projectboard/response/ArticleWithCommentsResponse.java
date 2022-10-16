@@ -19,7 +19,7 @@ public class ArticleWithCommentsResponse {
     private final String hashtag;
     private final LocalDateTime createdAt;
     private final String email;
-    private final String NickName;
+    private final String nickname;
     private final Set<ArticleCommentResponse> articleCommentsResponse;
 
 
