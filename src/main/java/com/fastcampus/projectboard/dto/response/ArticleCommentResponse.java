@@ -1,6 +1,6 @@
-package com.fastcampus.projectboard.response;
+package com.fastcampus.projectboard.dto.response;
 
-import com.fastcampus.projectboard.dto.ArticleDto;
+import com.fastcampus.projectboard.dto.ArticleCommentDto;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
@@ -8,34 +8,30 @@ import java.time.LocalDateTime;
 
 @Getter
 @RequiredArgsConstructor
-public class ArticleResponse {
+public class ArticleCommentResponse {
 
     private final Long id;
-    private final String title;
     private final String content;
-    private final String hashtag;
     private final LocalDateTime createdAt;
     private final String email;
     private final String nickname;
 
 
-    public static ArticleResponse of(Long id, String title, String content, String hashtag, LocalDateTime createdAt, String email, String nickName) {
-        return new ArticleResponse(id, title, content, hashtag, createdAt, email, nickName);
+    public static ArticleCommentResponse of(Long id, String content, LocalDateTime createdAt, String email, String nickName) {
+        return new ArticleCommentResponse(id, content, createdAt, email, nickName);
     }
 
-
-    public static ArticleResponse from(ArticleDto dto){
+    public static ArticleCommentResponse from(ArticleCommentDto dto){
 
         String nickname = dto.getUserAccountDto().getNickname();
         if (nickname == null || nickname.isBlank()){
             nickname = dto.getUserAccountDto().getUserId();
         }
 
-        return new ArticleResponse(
+        return new ArticleCommentResponse(
+
                 dto.getId(),
-                dto.getTitle(),
                 dto.getContent(),
-                dto.getHashtag(),
                 dto.getCreatedAt(),
                 dto.getUserAccountDto().getEmail(),
                 nickname
