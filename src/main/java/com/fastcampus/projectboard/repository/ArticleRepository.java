@@ -31,6 +31,7 @@ public interface ArticleRepository extends
     Page<Article> findByHashtag(String hashtag, Pageable pageable);
 
 
+    void deleteByIdAndUserAccount_UserId(Long articleId, String userId);
 
 
     @Override
